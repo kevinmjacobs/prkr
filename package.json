@@ -1,0 +1,8 @@
+{
+  "name": "prkr",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kevinmjacobs/prkr.git",
+  "author": "Kevin Jacobs <frevin8r@gmail.com>",
+  "license": "MIT"
+}
