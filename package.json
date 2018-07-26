@@ -5,6 +5,10 @@
   "repository": "https://github.com/kevinmjacobs/prkr.git",
   "author": "Kevin Jacobs <frevin8r@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node server/index",
+    "test": "echo 0"
+  },
   "dependencies": {
     "dotenv": "^6.0.0",
     "eslint": "^5.2.0"
