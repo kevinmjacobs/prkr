@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from './nav-bar/NavBar.jsx';
+import AppStyle from './App.style.js';
 
 export default class App extends React.Component {
   constructor() {
@@ -9,9 +10,9 @@ export default class App extends React.Component {
 
   render() {
     return(
-      <div>
+      <AppStyle>
         <NavBar />
-      </div>
+      </AppStyle>
     )
   }
 
