@@ -12,6 +12,7 @@ export default class NavBar extends React.Component {
       // navbar items listed in reverse order
       return(
         <NavBarStyle>
+          <img src="https://s3-us-west-1.amazonaws.com/prkr-img/blank-profile-picture-973460_960_720.png"></img>
           <NavBarItem item={"Help"}/>
           <NavBarItem item={"Products"}/>
           <NavBarItem item={"About"}/>
