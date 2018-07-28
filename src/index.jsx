@@ -3,29 +3,31 @@ import { render } from 'react-dom';
 import App from './components/App.jsx';
 
 import { combineReducers, createStore } from 'redux';
-
-const itemReducer = (state = [], action) => {
-  return state;
-}
-
-const logoReducer = (state = '', action) => {
-  return state;
-}
+import { Provider } from 'react-redux';
+import logoReducer from './reducers/logoReducer.js'
+import itemReducer from './reducers/itemReducer.js'
 
 const allReducers = combineReducers({
   items: itemReducer,
   logo: logoReducer
 });
 
-const store = createStore(allReducers, {
-  items: ['Help', 'Services', 'About'],
-  logo: "https://s3-us-west-1.amazonaws.com/prkr-img/temp-logo.png"
-});
+const store = createStore(
+  allReducers, 
+  {
+    items: ['Help', 'Services', 'About'],
+    logo: "https://s3-us-west-1.amazonaws.com/prkr-img/temp-logo.png"
+  },
+  window.devToolsExtension && window.devToolsExtension()
+  
+);
 
 console.log(store.getState());
 
 render(
-  <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById("app")
 )
 
