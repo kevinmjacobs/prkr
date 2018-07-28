@@ -1,4 +1,5 @@
 import React from 'react';
+import NavBarItem from '../navBarItem/NavBarItem.jsx';
 import NavBarStyle from './NavBar.style.js';
 
 export default class NavBar extends React.Component {
@@ -8,9 +9,12 @@ export default class NavBar extends React.Component {
     }
   
     render() {
+      // navbar items listed in reverse order
       return(
         <NavBarStyle>
-          Here is the nav bar
+          <NavBarItem item={"Help"}/>
+          <NavBarItem item={"Products"}/>
+          <NavBarItem item={"About"}/>
         </NavBarStyle>
       )
     }
