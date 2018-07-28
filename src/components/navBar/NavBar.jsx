@@ -16,7 +16,7 @@ export default class NavBar extends React.Component {
       <NavBarStyle>
         <NavBarProf></NavBarProf>
         <NavBarItem item={"Help"}/>
-        <NavBarItem item={"Products"}/>
+        <NavBarItem item={"Services"}/>
         <NavBarItem item={"About"}/>
         <NavBarLogo></NavBarLogo>
       </NavBarStyle>
