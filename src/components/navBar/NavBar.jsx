@@ -1,13 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import NavBarStyle from './NavBar.style.js';
 import NavBarItem from '../navBarItem/NavBarItem.jsx';
 import NavBarLogo from '../navBarLogo/NavBarLogo.jsx';
 import NavBarProf from '../navBarProf/NavBarProf.jsx';
 
-export default class NavBar extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
+
+class NavBar extends React.Component {
+  constructor(props) {
+    super(props);
   }
 
   render() {
@@ -15,11 +17,19 @@ export default class NavBar extends React.Component {
     return(
       <NavBarStyle>
         <NavBarProf></NavBarProf>
-        <NavBarItem item={"Help"}/>
-        <NavBarItem item={"Services"}/>
-        <NavBarItem item={"About"}/>
+        {this.props.items.map((item) => 
+          <NavBarItem item={item}/>
+        )}
         <NavBarLogo></NavBarLogo>
       </NavBarStyle>
     )
   } 
 }
+
+const mapStateToProps = state => ({
+  items: state.items,
+  logo: state.logo,
+  prof: state.prof
+});
+
+export default connect(mapStateToProps)(NavBar);
