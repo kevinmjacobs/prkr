@@ -16,11 +16,11 @@ class NavBar extends React.Component {
     // navbar items listed in reverse order
     return(
       <NavBarStyle>
-        <NavBarProf></NavBarProf>
+        <NavBarProf prof={this.props.prof}></NavBarProf>
         {this.props.items.map((item) => 
           <NavBarItem item={item}/>
         )}
-        <NavBarLogo></NavBarLogo>
+        <NavBarLogo logo={this.props.prof}></NavBarLogo>
       </NavBarStyle>
     )
   } 
