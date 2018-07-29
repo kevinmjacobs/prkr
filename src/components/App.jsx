@@ -1,4 +1,6 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import HomeSummary from './home-summary/HomeSummary.jsx'
 import About from './about/About.jsx';
 import NavBar from './navBar/NavBar.jsx';
@@ -11,11 +13,13 @@ class App extends React.Component {
 
   render() {
     return(
-      <AppStyle>
-        <NavBar />
-        <HomeSummary />
-        <About />
-      </AppStyle>
+      <Router>
+        <AppStyle>
+          <NavBar />
+          <Route exact path="/" component={HomeSummary} />
+          <Route path="/about" component={About} />
+        </AppStyle>
+      </Router>
     )
   }
 }
