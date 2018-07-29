@@ -16,13 +16,12 @@ const store = createStore(
   allReducers, 
   {
     items: ['Help', 'Services', 'About'],
-    logo: "https://s3-us-west-1.amazonaws.com/prkr-img/temp-logo.png"
+    logo: "https://s3-us-west-1.amazonaws.com/prkr-img/temp-logo.png",
+    prof: "https://s3-us-west-1.amazonaws.com/prkr-img/blank-profile-picture-973460_960_720.png"
   },
   window.devToolsExtension && window.devToolsExtension()
   
 );
-
-console.log(store.getState());
 
 render(
   <Provider store={store}>

@@ -2,10 +2,9 @@ import React from 'react';
 import NavBar from './navBar/NavBar.jsx';
 import AppStyle from './App.style.js';
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor() {
     super();
-    this.state = {};
   }
 
   render() {
@@ -15,5 +14,6 @@ export default class App extends React.Component {
       </AppStyle>
     )
   }
-
 }
+
+export default App;

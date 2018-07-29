@@ -1,9 +1,12 @@
+import { UPDATE_LOGO } from '../actions/logoActions'
+
 const logoReducer = (state = '', { type, payload }) => {
   switch (type) {
-    case 'updateLogo':
-      return payload;
+    case UPDATE_LOGO:
+      return payload.logo;
+    default:
+      return state;
   }
-  return state;
 }
 
 export default logoReducer;
