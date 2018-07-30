@@ -7,8 +7,8 @@ import NavBar from './navBar/NavBar.jsx';
 import AppStyle from './App.style.js';
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   render() {
@@ -16,8 +16,8 @@ class App extends React.Component {
       <Router>
         <AppStyle>
           <NavBar />
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
+          <Route exact path="/" render={props => <Home {...props} />} />
+          <Route exact path="/about" render={props => <About {...props} />} />
         </AppStyle>
       </Router>
     )
