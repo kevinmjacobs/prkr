@@ -1,5 +1,12 @@
 import React from 'react';
-import { AboutHeader } from './About.style.js';
+import loremIpsum from 'lorem-ipsum';
+
+import { AboutH1, AboutH3 } from './About.style.js';
+
+let description = loremIpsum({
+  count: 5,
+  units: 'words',
+});
 
 class About extends React.Component {
   constructor() {
@@ -9,9 +16,8 @@ class About extends React.Component {
   render() {
     return(
       <div>
-        <AboutHeader>
-          About
-        </AboutHeader>
+        <AboutH1>About</AboutH1>
+        <AboutH3>{description}</AboutH3>
       </div>
     )
   }

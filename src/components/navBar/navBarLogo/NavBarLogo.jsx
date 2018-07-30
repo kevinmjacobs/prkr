@@ -1,4 +1,5 @@
 import React from 'react';
+
 import NavBarLogoStyle from './NavBarLogo.style';
 
 const NavBarLogo = () => {

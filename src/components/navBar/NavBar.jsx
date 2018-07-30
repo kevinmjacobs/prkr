@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import NavBarStyle from './NavBar.style.js';
 import NavBarItem from './navBarItem/NavBarItem.jsx';
 import NavBarLogo from './navBarLogo/NavBarLogo.jsx';
 import NavBarProf from './navBarProf/NavBarProf.jsx';
 
+import NavBarStyle from './NavBar.style.js';
 
 class NavBar extends React.Component {
   constructor(props) {

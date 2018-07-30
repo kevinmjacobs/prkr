@@ -1,11 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './components/App.jsx';
-
-import { combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { combineReducers, createStore } from 'redux';
+
 import logoReducer from './reducers/logoReducer.js'
 import itemReducer from './reducers/itemReducer.js'
+
+import App from './components/App.jsx';
 
 const allReducers = combineReducers({
   items: itemReducer,

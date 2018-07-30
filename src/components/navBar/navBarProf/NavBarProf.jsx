@@ -1,4 +1,5 @@
 import React from 'react';
+
 import NavBarProfStyle from './NavBarProf.style';
 
 const NavBarProf = () => {
