@@ -15,7 +15,7 @@ const allReducers = combineReducers({
 const store = createStore(
   allReducers, 
   {
-    items: ['Help', 'Services', 'About'],
+    items: ['Help', 'Services', 'About', 'Home'],
     logo: "https://s3-us-west-1.amazonaws.com/prkr-img/temp-logo.png",
     prof: "https://s3-us-west-1.amazonaws.com/prkr-img/blank-profile-picture-973460_960_720.png"
   },

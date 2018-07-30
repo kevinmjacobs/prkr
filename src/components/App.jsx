@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import HomeSummary from './home-summary/HomeSummary.jsx'
+import Home from './home/Home.jsx'
 import About from './about/About.jsx';
 import NavBar from './navBar/NavBar.jsx';
 import AppStyle from './App.style.js';
@@ -16,7 +16,7 @@ class App extends React.Component {
       <Router>
         <AppStyle>
           <NavBar />
-          <Route exact path="/" component={HomeSummary} />
+          <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
         </AppStyle>
       </Router>

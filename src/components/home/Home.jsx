@@ -1,7 +1,7 @@
 import React from 'react';
 import loremIpsum from 'lorem-ipsum';
 
-import { HomeSummaryH1, HomeSummaryH3 } from './HomeSummary.style.js';
+import { HomeH1, HomeH3 } from './Home.style.js';
 
 const HomeSummary = () => {
   let summary = loremIpsum({
@@ -14,8 +14,8 @@ const HomeSummary = () => {
   })
   return(
     <div>
-      <HomeSummaryH1>{summary}</HomeSummaryH1>
-      <HomeSummaryH3>{description}</HomeSummaryH3>
+      <HomeH1>{summary}</HomeH1>
+      <HomeH3>{description}</HomeH3>
     </div>
   )
 }
