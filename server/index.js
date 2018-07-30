@@ -15,4 +15,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../static')));
 app.use(express.static(path.join(__dirname, '../build')));
 
+app.get(['/', '/home', '/about', '/services', '/help'], (req, res) => {
+  res.sendFile(path.join(__dirname, '../static/index.html'), (err) => {
+    (err) && res.status(500).send(err)
+  })
+})
+
 app.listen(PORT, () => console.log(`Connected to PORT: ${PORT}`));
