@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { BookingHeader, BookingMain } from './Booking.style.js';
+
 class Booking extends React.Component {
   constructor() {
     super()
@@ -7,9 +9,9 @@ class Booking extends React.Component {
 
   render() {
     return(
-      <div>
-        Booking
-      </div>
+      <BookingMain>
+        <BookingHeader>Book a space!</BookingHeader>
+      </BookingMain>
     )
   }
 }
