@@ -1,5 +1,7 @@
 import React from 'react';
 
+import BookingSearch from './bookingSearch/BookingSearch.jsx';
+
 import { BookingHeader, BookingMain } from './Booking.style.js';
 
 class Booking extends React.Component {
@@ -11,6 +13,7 @@ class Booking extends React.Component {
     return(
       <BookingMain>
         <BookingHeader>Book a space!</BookingHeader>
+        <BookingSearch />
       </BookingMain>
     )
   }
