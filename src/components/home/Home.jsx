@@ -1,6 +1,8 @@
 import React from 'react';
 import loremIpsum from 'lorem-ipsum';
 
+import Booking from './booking/Booking.jsx';
+
 import { HomeH1, HomeH3 } from './Home.style.js';
 
 let description = loremIpsum({
@@ -13,6 +15,7 @@ const HomeSummary = () => {
     <div>
       <HomeH1>Home</HomeH1>
       <HomeH3>{description}</HomeH3>
+      <Booking />
     </div>
   )
 }
