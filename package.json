@@ -8,7 +8,8 @@
   "scripts": {
     "start": "nodemon server/index",
     "test": "echo 0",
-    "build": "webpack -w"
+    "build": "webpack -w",
+    "seed_db": "psql -U root -d prkr -a -f db/seed.sql"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
