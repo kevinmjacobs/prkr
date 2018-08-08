@@ -1,4 +1,5 @@
-require('dotenv/config');
+require('dotenv').config();
+require('../db/database');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const express = require('express');
