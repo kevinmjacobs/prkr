@@ -1,3 +1,5 @@
+import { GEOCODE_API_KEY } from ('../../../../../env');
+
 import React from 'react';
 
 import SearchResult from './searchResult/SearchResult.jsx';
@@ -17,12 +19,20 @@ export default class BookingSearch extends React.Component {
         ['98 University Dr, San Ramon, CA 30753', '37.7624642', '-121.9814354']
       ]
     }
+    this.searchForResults = this.searchForResults.bind(this);
   }
 
   updateSearchEntry(e) {
     this.setState({
       entry: e.target.value
     })
+  }
+
+  searchForResults() {
+    console.log(GEOCODE_API_KEY);
+    // fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY`, (req, res) => {
+
+    // })
   }
 
   render() {
@@ -33,7 +43,7 @@ export default class BookingSearch extends React.Component {
             placeholder="Enter location"
             onKeyUp={(e) => {this.updateSearchEntry(e)}}
           />
-          <SearchButton>Search</SearchButton>
+          <SearchButton onClick={(e) => this.searchForResults()}>Search</SearchButton>
         </SearchBar>
         <div>
           {this.state.results.map((result) => 
