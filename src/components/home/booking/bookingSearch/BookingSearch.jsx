@@ -11,6 +11,8 @@ export default class BookingSearch extends React.Component {
     super();
     this.state = {
       entry: '',
+      lat,
+      lng,
       results: [
         ['99 5th Ave #33, Trion, GA 30753', '34.547033', '-85.3075825999999'],
         ['987 Main St, Raleigh, NC 27601 ', '35.7765175', '-78.6359872'],
@@ -30,11 +32,14 @@ export default class BookingSearch extends React.Component {
 
   searchForResults() {
     const address = this.state.entry.split(' ').join('+');
-    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${GEOCODE_API_KEY}`)
+    fetch(`https://api.geocod.io/v1.3/geocode?q=${address}&api_key=${GEOCODE_API_KEY}`)
     .then(results => {
       return results.json();
     }).then(data => {
-        console.log(data.results);
+        this.setState({
+          lat: data.results[0].location.lat,
+          lng: data.results[0].location.lng
+        })
       })
   }
 
