@@ -1,16 +1,20 @@
 import React from 'react';
 
+import { ResultDiv } from './SearchResult.style.js';
+
 export default class SearchResult extends React.Component {
   constructor(props) {
     super(props); 
     this.state = {
-      result: props.result
+      address: props.address,
+      lat: props.lat,
+      long: props.long
     }
   }
   
   render() {
     return(
-      <div>{this.state.result}</div>
+      <ResultDiv>{this.state.address}</ResultDiv>
     )
   }
 }

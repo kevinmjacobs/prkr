@@ -12,7 +12,7 @@ class Booking extends React.Component {
   render() {
     return(
       <BookingMain>
-        <BookingHeader>Book a space!</BookingHeader>
+        <BookingHeader>Header</BookingHeader>
         <BookingSearch />
       </BookingMain>
     )

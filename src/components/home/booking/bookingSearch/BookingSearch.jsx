@@ -2,6 +2,8 @@ import React from 'react';
 
 import SearchResult from './searchResult/SearchResult.jsx';
 
+import { SearchBar, SearchButton, SearchInput } from './BookingSearch.style.js';
+
 export default class BookingSearch extends React.Component {
   constructor() {
     super();
@@ -26,13 +28,16 @@ export default class BookingSearch extends React.Component {
   render() {
     return(
       <div>
-        <input 
-          placeholder="Enter location"
-          onKeyUp={(e) => {this.updateSearchEntry(e)}}
-        />
+        <SearchBar>
+          <SearchInput 
+            placeholder="Enter location"
+            onKeyUp={(e) => {this.updateSearchEntry(e)}}
+          />
+          <SearchButton>Search</SearchButton>
+        </SearchBar>
         <div>
           {this.state.results.map((result) => 
-            <SearchResult result={result}/>
+            <SearchResult address={result[0]} lat={result[1]} long={result[2]}/>
           )}
         </div>
       </div>

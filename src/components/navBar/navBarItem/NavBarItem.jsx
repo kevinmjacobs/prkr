@@ -9,7 +9,6 @@ import Services from '../../services/Services.jsx';
 import { NavBarItemDiv } from './NavBarItem.style';
 
 const NavBarItem = (props) => {
-  console.log(props.item)
   if (props.item === 'Home') {
     return(
       <Link to="/">
