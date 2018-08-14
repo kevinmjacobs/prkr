@@ -1,10 +1,10 @@
-import { GEOCODE_API_KEY } from ('../../../../../env');
-
 import React from 'react';
 
 import SearchResult from './searchResult/SearchResult.jsx';
 
 import { SearchBar, SearchButton, SearchInput } from './BookingSearch.style.js';
+
+import { GEOCODE_API_KEY } from '../../../../../config/config.js';
 
 export default class BookingSearch extends React.Component {
   constructor() {
@@ -29,10 +29,13 @@ export default class BookingSearch extends React.Component {
   }
 
   searchForResults() {
-    console.log(GEOCODE_API_KEY);
-    // fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY`, (req, res) => {
-
-    // })
+    const address = this.state.entry.split(' ').join('+');
+    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${GEOCODE_API_KEY}`)
+    .then(results => {
+      return results.json();
+    }).then(data => {
+        console.log(data.results);
+      })
   }
 
   render() {
