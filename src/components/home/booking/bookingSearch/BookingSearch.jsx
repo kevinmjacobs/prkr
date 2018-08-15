@@ -11,8 +11,8 @@ export default class BookingSearch extends React.Component {
     super();
     this.state = {
       entry: '',
-      lat,
-      lng,
+      lat: undefined,
+      lng: undefined,
       results: [
         ['99 5th Ave #33, Trion, GA 30753', '34.547033', '-85.3075825999999'],
         ['987 Main St, Raleigh, NC 27601 ', '35.7765175', '-78.6359872'],
@@ -21,7 +21,8 @@ export default class BookingSearch extends React.Component {
         ['98 University Dr, San Ramon, CA 30753', '37.7624642', '-121.9814354']
       ]
     }
-    this.searchForResults = this.searchForResults.bind(this);
+    this.geocodeSearch = this.geocodeSearch.bind(this);
+    this.generateSearchResults = this.generateSearchResults.bind(this);
   }
 
   updateSearchEntry(e) {
@@ -30,7 +31,7 @@ export default class BookingSearch extends React.Component {
     })
   }
 
-  searchForResults() {
+  geocodeSearch() {
     const address = this.state.entry.split(' ').join('+');
     fetch(`https://api.geocod.io/v1.3/geocode?q=${address}&api_key=${GEOCODE_API_KEY}`)
     .then(results => {
@@ -39,9 +40,15 @@ export default class BookingSearch extends React.Component {
         this.setState({
           lat: data.results[0].location.lat,
           lng: data.results[0].location.lng
-        })
+        }, this.generateSearchResults)
       })
   }
+
+  generateSearchResults() {
+    console.log('search results')
+  }
+
+
 
   render() {
     return(
@@ -51,7 +58,7 @@ export default class BookingSearch extends React.Component {
             placeholder="Enter location"
             onKeyUp={(e) => {this.updateSearchEntry(e)}}
           />
-          <SearchButton onClick={(e) => this.searchForResults()}>Search</SearchButton>
+          <SearchButton onClick={(e) => this.geocodeSearch()}>Search</SearchButton>
         </SearchBar>
         <div>
           {this.state.results.map((result) => 
