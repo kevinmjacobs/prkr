@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const BookingMain = styled.div`
-  border: 1px solid #783ac4
   text-align: center;
   color: #783ac4;
   margin: auto;

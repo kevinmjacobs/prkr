@@ -1,5 +1,4 @@
 const path = require('path');
-
 const SRC_DIR = path.resolve(__dirname, './src');
 const BUILD_DIR = path.resolve(__dirname, './build');
 
