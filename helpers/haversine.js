@@ -11,4 +11,3 @@ module.exports = haversineCalc = (lat1, lng1, lat2, lng2) => {
 
   return ((R * c) * 0.621371).toPrecision(6);
 }
-
