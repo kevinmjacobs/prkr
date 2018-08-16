@@ -1,33 +1,14 @@
-const { client } = require('../../db/database');
-const { Pool } = require('pg');
-// const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/prkr';
-
-const pool = new Pool();
+const { getPool } = require('../../db/database');
 
 module.exports = {
   get: (callback) => {
-    pool.on('error', (err, client) => {
-      done();
-      console.error('Error:', err);
-      process.exit(-1);
-    })
-    pool.connect((err, client, done) => {
-      if (err) {
-        done();
-        console.log(err);
-      }
+    const pool = getPool();
+    pool.connect((err, client) => {
+      (err) && callback(err, null);
       client.query(`SELECT * FROM valet;`, (err, data) => {
-          done();
           (err) && console.log(err.stack);
-          console.log('query valet');
-          callback(data);
+          callback(null, data.rows);
         })
     });
-    pool.end();
-    // client.query(`SELECT * FROM valet;`, (err, data) => {
-    //   (err) && console.log(err.stack);
-    //   console.log('query valet');
-    //   callback(data);
-    // })
   }
 }
