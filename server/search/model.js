@@ -1,13 +1,14 @@
 const { getPool } = require('../../db/database');
 
 module.exports = {
-  get: (callback) => {
+  get: (lat, lng, callback) => {
     const pool = getPool();
-    pool.connect((err, client) => {
+    pool.connect((err, client, release) => {
       (err) && callback(err, null);
-      client.query(`SELECT * FROM valet;`, (err, data) => {
-          (err) && console.log(err.stack);
-          callback(null, data.rows);
+      client.query(`SELECT * FROM valet where lat >= (${lat} - 1) and lat <= (${lat} + 1) and long >= (${lng} - 1) and long <= (${lng} + 1);`, (err, data) => {
+        release();
+        (err) && callback(err, null);
+        callback(null, data.rows);
         })
     });
   }

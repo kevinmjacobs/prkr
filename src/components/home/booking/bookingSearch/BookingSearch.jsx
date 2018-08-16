@@ -45,7 +45,7 @@ export default class BookingSearch extends React.Component {
   }
 
   generateSearchResults() {
-    fetch(`/api/search?lat=${this.state.lat}?lng=${this.state.lng}`)
+    fetch(`/api/search?lat=${this.state.lat}&lng=${this.state.lng}`)
     .then(res => res.json())
     .catch(err => console.log(err))
     .then(res => console.log(res))
