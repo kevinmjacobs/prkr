@@ -9,5 +9,5 @@ module.exports = haversineCalc = (lat1, lng1, lat2, lng2) => {
 
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-  return ((R * c) * 0.621371).toPrecision(6);
+  return ((R * c) * 0.621371).toPrecision(3);
 }
