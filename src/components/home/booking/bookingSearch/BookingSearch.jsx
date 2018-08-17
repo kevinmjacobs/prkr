@@ -13,7 +13,8 @@ export default class BookingSearch extends React.Component {
       entry: '',
       lat: undefined,
       lng: undefined,
-      results: []
+      results: [],
+      resultCount: 10
     }
     this.geocodeSearch = this.geocodeSearch.bind(this);
     this.generateSearchResults = this.generateSearchResults.bind(this);
@@ -58,9 +59,11 @@ export default class BookingSearch extends React.Component {
           <SearchButton onClick={(e) => this.geocodeSearch()}>Search</SearchButton>
         </SearchBar>
         <div>
-          {this.state.results.map((result) => 
-            <SearchResult id={result[0]} name={result[1]} address={result[2]} distance={result[3]}/>
-          )}
+          {this.state.results.map((result, index) => {
+            if (index < this.state.resultCount) {
+              return <SearchResult id={result[0]} name={result[1]} address={result[2]} distance={result[3]}/>
+            }
+          })}
         </div>
       </div>
     )
