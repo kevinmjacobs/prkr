@@ -1,7 +1,18 @@
-const { Client } = require('pg');
-const connection = process.env.DATABASE_URL || 'postgres://localhost:5432/prkr';
+const Pool = require('pg').Pool;
 
-const client = new Client(connection);
-module.exports = {
-  client
+const config = {
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'prkr'
 }
+
+const pool = new Pool(config);
+
+const getPool = () => {
+  return pool;
+}
+
+module.exports = {
+  getPool
+}  
