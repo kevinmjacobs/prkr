@@ -5,7 +5,7 @@ export const BookingMain = styled.div`
   color: #783ac4;
   margin: auto;
   size: 16px;
-  width: 50%;
+  width: 35%;
   min-width: 300px;
   height: 25%;
   min-height: 200px;
