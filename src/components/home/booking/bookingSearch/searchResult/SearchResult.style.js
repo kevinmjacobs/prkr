@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
 export const ResultDiv = styled.div`
-  display: inline;
   text-align: left;
-  margin: 0.5em;
+  padding: 8px;
+  width: 100%;
+  &:hover {
+    background: #e7def2;
+  }
+
 `;
 
 export const ResultName = styled.span`
