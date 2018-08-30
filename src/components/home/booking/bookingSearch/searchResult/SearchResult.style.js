@@ -7,7 +7,6 @@ export const ResultDiv = styled.div`
   &:hover {
     background: #e7def2;
   }
-
 `;
 
 export const ResultName = styled.span`
@@ -24,3 +23,24 @@ export const ResultDistance = styled.span`
   float: right;
   font-size: 22px;
 `;
+
+export const MoreInfo = styled.div`
+  opacity: 0;
+  text-align: center;
+  height: 0px;
+  -webkit-transition: height 0.25s linear, opacity 0.25s linear;
+  -moz-transition: height 0.25s linear, opacity 0.25s linear;
+  -ms-transition: height 0.25s linear, opacity 0.25s linear;
+  -o-transition: height 0.25s linear, opacity 0.25s linear;
+  transition: height 0.25s linear, opacity 0.25s linear;
+  ${ResultDiv}:hover & {
+    opacity: 1;
+    height: 12px;
+    -webkit-transition: height 0.25s linear, opacity 0.25s linear;
+    -moz-transition: height 0.25s linear, opacity 0.25s linear;
+    -ms-transition: height 0.25s linear, opacity 0.25s linear;
+    -o-transition: height 0.25s linear, opacity 0.25s linear;
+    transition: height 0.25s linear, opacity 0.25s linear;
+  }
+
+`
