@@ -1,20 +1,37 @@
 import React from 'react';
 
-import { ResultDiv } from './SearchResult.style.js';
+import { MoreInfo, ResultDiv, ResultName, ResultAddress, ResultDistance } from './SearchResult.style.js';
 
 export default class SearchResult extends React.Component {
   constructor(props) {
     super(props); 
     this.state = {
+      id: props.id,
+      name: props.name,
       address: props.address,
-      lat: props.lat,
-      long: props.long
+      distance: props.distance
     }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      id: nextProps.id,
+      name: nextProps.name,
+      address: nextProps.address,
+      distance: nextProps.distance
+    });
   }
   
   render() {
     return(
-      <ResultDiv>{this.state.address}</ResultDiv>
+      <ResultDiv>
+        <div>
+          <ResultName>{this.state.name}</ResultName>
+          <ResultDistance>{this.state.distance} mi.</ResultDistance>
+        </div>
+        <ResultAddress>{this.state.address}</ResultAddress>
+        <MoreInfo>&#9662;</MoreInfo>
+      </ResultDiv>
     )
   }
 }
