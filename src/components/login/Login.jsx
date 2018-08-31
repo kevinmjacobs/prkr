@@ -1,27 +1,41 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { MainDiv, LoginTab, SignupTab} from './Login.style.js';
 
-class Login extends React.Component {
+class LoginPortal extends React.Component {
   constructor() {
     super();
   }
 
   render() {
     return(
-      <MainDiv>
-        <LoginTab>Login</LoginTab>
-        <SignupTab>Signup</SignupTab>
-        <div>
-          Here is some text
-        </div>
-        <Router>
-          {/* <Route exact path="/" component={Login} />
-          <Route exact path="/signup" component={Signup} /> */}
-        </Router>
-      </MainDiv>
+      <Router>
+        <MainDiv>
+          <LoginTab>
+            <Link to="/">Login</Link>
+          </LoginTab>
+          <SignupTab>
+            <Link to="/signup">Signup</Link>
+          </SignupTab>
+          <Route exact path="/" component={Login} />
+          <Route path="/signup" component={Signup} />
+        </MainDiv>
+      </Router>
     )
   }
 }
 
-export default Login;
+const Login = () => (
+  <div>
+    Login
+  </div>
+);
+
+const Signup = () => (
+  <div>
+    Signup
+  </div>
+);
+
+
+export default LoginPortal;

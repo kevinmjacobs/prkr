@@ -10,6 +10,7 @@ export const MainDiv = styled.div`
 `;
 
 export const LoginTab = styled.span`
+  text-decoration: none;
   text-align: center;
   width: 198px;
   height: 25px;
@@ -20,6 +21,7 @@ export const LoginTab = styled.span`
 `;
 
 export const SignupTab = styled.span`
+  text-decoration: none;
   text-align: center;
   width: 198px;
   height: 25px;

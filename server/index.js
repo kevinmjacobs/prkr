@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, '../build')));
 
 app.use('/api', router);
 
-app.get(['/', '/home', '/about', '/services', '/help'], (req, res) => {
+app.get(['/', '/home', '/about', '/services', '/help', '/signup'], (req, res) => {
   res.sendFile(path.join(__dirname, '../static/index.html'), (err) => {
     (err) && res.status(500).send(err)
   })
