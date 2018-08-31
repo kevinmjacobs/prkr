@@ -1,12 +1,5 @@
 import React from 'react';
-import loremIpsum from 'lorem-ipsum';
-
 import { HelpH1, HelpH3 } from './Help.style.js';
-
-let description = loremIpsum({
-  count: 5,
-  units: 'words',
-});
 
 class Help extends React.Component {
   constructor() {
@@ -17,7 +10,7 @@ class Help extends React.Component {
     return(
       <div>
         <HelpH1>Help</HelpH1>
-        <HelpH3>{description}</HelpH3>
+        <HelpH3>Description</HelpH3>
       </div>
     )
   }
