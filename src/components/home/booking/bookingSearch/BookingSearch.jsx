@@ -1,9 +1,6 @@
 import React from 'react';
-
 import SearchResult from './searchResult/SearchResult.jsx';
-
 import { SearchBar, SearchButton, SearchInput } from './BookingSearch.style.js';
-
 import { GEOCODE_API_KEY } from '../../../../../config/config.js';
 
 export default class BookingSearch extends React.Component {

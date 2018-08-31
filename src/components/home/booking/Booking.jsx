@@ -1,7 +1,5 @@
 import React from 'react';
-
 import BookingSearch from './bookingSearch/BookingSearch.jsx';
-
 import { BookingHeader, BookingMain } from './Booking.style.js';
 
 class Booking extends React.Component {
@@ -12,7 +10,7 @@ class Booking extends React.Component {
   render() {
     return(
       <BookingMain>
-        <BookingHeader>Header</BookingHeader>
+        <BookingHeader>Booking Header</BookingHeader>
         <BookingSearch />
       </BookingMain>
     )

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { MoreInfo, ResultDiv, ResultName, ResultAddress, ResultDistance } from './SearchResult.style.js';
 
 export default class SearchResult extends React.Component {

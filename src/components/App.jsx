@@ -1,12 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
 import About from './about/About.jsx';
 import Help from './help/Help.jsx';
 import Home from './home/Home.jsx'
 import Services from './services/Services.jsx'
 import NavBar from './navBar/NavBar.jsx';
-
 import AppStyle from './App.style.js';
 
 class App extends React.Component {
