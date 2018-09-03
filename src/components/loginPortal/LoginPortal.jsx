@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { MainDiv, LoginTab, SignupTab} from './Login.style.js';
+import { Login } from "./login/Login.jsx";
+import { Signup } from "./signup/Signup.jsx";
+import { MainDiv, LoginTab, SignupTab } from './LoginPortal.style.js';
 
 class LoginPortal extends React.Component {
   constructor() {
@@ -18,24 +20,12 @@ class LoginPortal extends React.Component {
             <SignupTab>Signup</SignupTab>
           </Link>
           <Route exact path="/" component={Login} />
+          <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
         </MainDiv>
       </Router>
     )
   }
 }
-
-const Login = () => (
-  <div>
-    Login
-  </div>
-);
-
-const Signup = () => (
-  <div>
-    Signup
-  </div>
-);
-
 
 export default LoginPortal;

@@ -5,7 +5,7 @@ import { combineReducers, createStore } from 'redux';
 import logoReducer from './reducers/logoReducer.js'
 import itemReducer from './reducers/itemReducer.js'
 import App from './components/App.jsx';
-import Login from './components/login/Login.jsx';
+import LoginPortal from './components/loginPortal/LoginPortal.jsx';
 
 const allReducers = combineReducers({
   items: itemReducer,
@@ -26,7 +26,7 @@ const store = createStore(
 render(
   <Provider store={store}>
     {/* <App /> */}
-    <Login />
+    <LoginPortal />
   </Provider>,
   document.getElementById("app")
 )
