@@ -1,19 +1,11 @@
 import React from 'react'
+import { LoginUser, LoginForm, LoginPassword, SubmitLogin } from './Login.style.js';
+
 
 export const Login = () => (
-  <form>
-    <div>
-      <label>
-        Username:
-        <input type="text" />
-      </label>
-    </div>
-    <div>
-      <label>
-        Password:
-        <input type="text" />
-      </label>
-    </div>
-    <input type="submit" value="Submit" />
-  </form>
+  <LoginForm>
+    <LoginUser type="text" placeholder="Username"/>
+    <LoginPassword type="text" placeholder="Password"/>
+    <SubmitLogin type="submit" value="Submit" />
+  </LoginForm>
 );
