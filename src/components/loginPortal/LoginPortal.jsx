@@ -13,13 +13,13 @@ class LoginPortal extends React.Component {
     return(
       <Router>
         <MainDiv>
-          <Link to="/">
+          <Link to="/login">
             <LoginTab>Login</LoginTab>
           </Link>
           <Link to="/signup">
             <SignupTab>Signup</SignupTab>
           </Link>
-          <Route exact path="/" component={Login} />
+          <Route exact path="/login" component={Login} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
         </MainDiv>
