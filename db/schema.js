@@ -1,4 +1,7 @@
-const { client } = require('./database');
+const { getPool } = require('./database');
+
+
+const client = getPool();
 
 client.connect();
 
@@ -15,6 +18,17 @@ client.query(`
       email VARCHAR(255) NOT NULL,
       lat VARCHAR(20) NOT NULL,
       long VARCHAR(20) NOT NULL
+    );`
+  , (err, data) => {
+    (err) && console.log(err.stack);
+  client.end();
+});
+
+client.query(`
+  CREATE TABLE app_users(
+      id SERIAL PRIMARY KEY NOT NULL,
+      email VARCHAR(255) NOT NULL,
+      password VARCHAR(255) NOT NULL
     );`
   , (err, data) => {
     (err) && console.log(err.stack);
