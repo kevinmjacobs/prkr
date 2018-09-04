@@ -6,7 +6,7 @@ export const LoginForm = styled.form`
   text-align: center;
 `;
 
-export const LoginUser = styled.input`
+export const LoginEmail = styled.input`
   display: block;
   margin: 10px auto;
   &::-webkit-input-placeholder {
