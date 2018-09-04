@@ -16,8 +16,7 @@ module.exports = {
         if (err) {
           callback(err, null)
         } else {
-          console.log(data.rowCount);
-          callback(null, data);
+          callback(null, { rowsAdded: data.rowCount });
         }
       })
     });
