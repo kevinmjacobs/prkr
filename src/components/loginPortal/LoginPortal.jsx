@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Login } from "./login/Login.jsx";
-import { Signup } from "./signup/Signup.jsx"
+import Signup from "./signup/Signup.jsx"
 import { MainDiv, LoginTab, SignupTab } from './LoginPortal.style.js';
 
 class LoginPortal extends React.Component {
