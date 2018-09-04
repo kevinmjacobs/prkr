@@ -16,7 +16,7 @@ module.exports = {
         if (err) {
           callback(err, null)
         } else {
-          callback(null, { rowsAdded: data.rowCount });
+          callback(null, data.rowCount);
         }
       })
     });

@@ -7,14 +7,18 @@ module.exports = {
     bcrypt.hash(req.body.password, 10, (err, hash) => {
       if (err) {
         console.log(err.stack)
-        res.send('Error hashing password').status(400);
+        res.sendStatus(400)
       } else {
         SignupModel.post(email, hash, (err, data) => {
           if (err) {
             console.log(err.stack);
-            res.send('User not created').status(400);
+            res.sendStatus(400);
           } else {
-            res.send(data).status(201);
+              if (data === 1) {
+                res.sendStatus(201);
+              } else {
+                res.sendStatus(204);
+              }
           }
         });
       }

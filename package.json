@@ -12,6 +12,7 @@
     "seed_db": "psql -U root -d prkr -a -f db/seed.sql"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "bcrypt": "^3.0.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
