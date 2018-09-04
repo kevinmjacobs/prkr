@@ -29,6 +29,21 @@ export default class Signup extends React.Component {
         findDOMNode(this.refs.rePassword).value = "";
         window.alert("Passwords do not match - try again");
       })
+    } else {
+      const body = { 
+        email: this.state.email,
+        password: this.state.password
+      };
+      fetch('/api/signup', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      })
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
     }
   }
 
